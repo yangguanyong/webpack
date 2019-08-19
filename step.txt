@@ -1,0 +1,24 @@
+1,安装全局，npm，webpack，vue等
+  注意：webpack4一定要安装webpack-cli -g
+2，项目内 npm init
+3，新建webpack.config.js
+4，package.json中加入script执行
+  注意：webpack4中script中执行要加入--mode development
+5，在alias中配置你的vue用的是哪种类型
+  注意，需要你对vue的运行环境和版本要了解透
+6，new Vue
+  需要你对vue new的时候的配置要了解透，比如render，template等
+7，安装vue-loader,vue-template-compiler,vueLoaderPlugin并配置到webpack.config中
+8，起热更新服务
+  可以用webpack文档中的express方案，这里选择哪个方案很重要
+9，引入路由vue-router
+10，构建server proxy并用getman测试代理
+11，配置样式css-loader，style-loader，sass-loader，node-sass，并提取css为单独文件（mini-css-extract-plugin）
+12，提取公共为vendor文件，具体文件大小在打包后输出的信息可查看，提起后一是减小main.js体积，二是公共文件可以用缓存
+13，output和MiniCssExtractPlugin都添加chunkhash:6，解决缓存问题
+14，提取runtimeChunk，进一步减小main.js体积
+15，entry配置多入口，HtmlWebpackPlugin通过chunk关联，devServer通过historyApiFallback映射,publicPath配置'/'
+16，配置resolve alias，注意在template和style中引用别名要加~
+17，copy不用打包的文件，copyWebpackPlugin
+18，添加bable-loader，rules中添加，.babelrc文件，还有入口文件添加polyfill
+19，理清配置中的各种路径
